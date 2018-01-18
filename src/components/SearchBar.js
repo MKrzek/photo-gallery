@@ -2,6 +2,7 @@ import React from 'react';
 import{Field, reduxForm} from 'redux-form';
 import{connect} from 'react-redux';
 import * as Actions from '../actions/index.js';
+import Photos from './Photos.js';
 
 class SearchBar extends React.Component{
 
@@ -27,6 +28,7 @@ handleSubmit=(value)=>{
 
                     <button type='submit' className='btn btn-primary'>Search</button>
                 </form>
+                <Photos />
                </div>
     }
 }
