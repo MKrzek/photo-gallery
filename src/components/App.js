@@ -25,11 +25,12 @@ onPhotoSelect = (photo) => {
           modalIsOpen={this.props.modalIsOpen}
           selectedPhoto={this.props.selectedPhoto}
           onRequestClose={this.closePhoto}
-        />
+         />
       </div>
     );
   }
-}
+};
+
 function mapStateToProps (state){
   console.log ('modal is open', state.modal.modalIsOpen)
   console.log ('app selected photo', state.modal.selectedPhoto)
@@ -37,6 +38,6 @@ function mapStateToProps (state){
     modalIsOpen: state.modal.modalIsOpen,
     selectedPhoto: state.modal.selectedPhoto
   }
-}
+};
 
 export default connect (mapStateToProps, Actions) (App);
