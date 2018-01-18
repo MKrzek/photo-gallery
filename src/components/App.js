@@ -9,7 +9,9 @@ class App extends Component {
 
 onPhotoSelect = (photo) => {
    this.props.openModal(photo);
-     console.log("dziala",photo);
+     
+     this.props.getExifData(photo.id)
+     console.log('photo.id', photo.id)
    };
 
   closePhoto = () => {
@@ -25,6 +27,7 @@ onPhotoSelect = (photo) => {
           modalIsOpen={this.props.modalIsOpen}
           selectedPhoto={this.props.selectedPhoto}
           onRequestClose={this.closePhoto}
+          exif={this.props.exif}
          />
       </div>
     );
@@ -32,11 +35,11 @@ onPhotoSelect = (photo) => {
 };
 
 function mapStateToProps (state){
-  console.log ('modal is open', state.modal.modalIsOpen)
-  console.log ('app selected photo', state.modal.selectedPhoto)
+  console.log ('exif', state.exif)
   return {
     modalIsOpen: state.modal.modalIsOpen,
-    selectedPhoto: state.modal.selectedPhoto
+    selectedPhoto: state.modal.selectedPhoto,
+    exif: state.exif
   }
 };
 
