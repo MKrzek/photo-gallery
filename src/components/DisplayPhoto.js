@@ -1,11 +1,17 @@
 import React from 'react';
 export default class DisplayPhoto extends React.Component{
+   
+    
+
     render(){
-        console.log ('diplsay photo', this.props.photo)
-        const {farm, server, id, secret}=this.props.photo
+        
+        const {farm, server, id, secret, title}=this.props.photo;
        
-        return <div>
-                  <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}></img>
+        return <div id='photo-list'>
+               <div className='photo-item'>
+                  <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`} alt={title}
+                        onClick={()=>this.props.onPhotoSelect(this.props.photo)}></img>
+              </div>
               </div>
     }
 }

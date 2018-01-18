@@ -3,3 +3,25 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.photo-item{
+  box-shadow: 2px 2px 4px 0 #ccc;
+  box-sizing: border-box;
+  display: inline-block;  
+  margin: 0 0 1.9em;
+  padding: 1em;
+  position: relative;
+  width: 40%;
+  
+
+}
+.photo-item img{
+ width: 100%;
+}
+div#photo-list{
+  column-gap: 1.5em; 
+  font-size: .85em;
+  margin: 1em;
+  padding: 0;
+  display: inline-block;
+
+}

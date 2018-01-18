@@ -2,6 +2,8 @@ import axios from 'axios';
 const apiKey= '6b40783a0549a79410db0d03ddce6bcd';
  
 export const FETCH_PHOTOS ="FETCH_PHOTOS";
+export const OPEN_MODAL='OPEN_MODAL';
+export const CLOSE_MODAL='CLOSE_MODAL';
 
 export function fetchPhotos(value){
   const pageNum=1;
@@ -19,3 +21,18 @@ export function fetchPhotos(value){
       });
   }
 }
+export function openModal(photo){
+  console.log ('actionmodal photo', photo)
+  return{
+    type: OPEN_MODAL,
+    payload: photo
+  
+  }
+}
+
+export function closeModal(){
+   return {
+     type: CLOSE_MODAL
+   }
+}
+

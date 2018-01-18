@@ -2,15 +2,15 @@ import React from 'react';
 import{Field, reduxForm} from 'redux-form';
 import{connect} from 'react-redux';
 import * as Actions from '../actions/index.js';
-import Photos from './Photos.js';
+
 
 class SearchBar extends React.Component{
 
 renderSearchBar=(field)=>{
     
     return <fieldset className='form-group'>
-            <label className='form-label'>{field.label}</label>
-            <input {...field.input} type={field.type}/>
+           
+            <input {...field.input} type={field.type} placeholder={field.placeholder} className='form-control form-control-lg'/>
             <div style={{color:'red'}}>{field.meta.touched ? field.meta.error: ''}</div>
            </fieldset>
 };
@@ -20,16 +20,23 @@ handleSubmit=(value)=>{
 
     render(){
             return <div>
-                <form onSubmit={this.props.handleSubmit(this.handleSubmit)}>
+                <div className='container'> 
+                <div className='mt-4'>
+                <div className='text-center'>
+                <h1>Photo Gallery</h1>
+                <form onSubmit={this.props.handleSubmit(this.handleSubmit)} className='mt-4'>
                     <Field name='searchBar'
                            type='text'
-                           label='Enter your query'
+                           placeholder='Enter your query'  
                            component={this.renderSearchBar}/>
-
                     <button type='submit' className='btn btn-primary'>Search</button>
                 </form>
-                <Photos />
-               </div>
+                </div>
+                </div>
+                </div>
+            
+                </div>  
+                
     }
 }
 function validate(value){
