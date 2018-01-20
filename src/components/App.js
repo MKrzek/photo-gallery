@@ -20,7 +20,7 @@ onPhotoSelect = (photo) => {
 
   render() {
     return (
-      <div>
+      <div className='container-fluid'>
         <SearchBar />
         <Photos onPhotoSelect={this.onPhotoSelect}/>
         <PhotoModal

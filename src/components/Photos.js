@@ -20,8 +20,8 @@ class Photos extends React.Component {
   };
   render() {
     return (
-      <div className="row">
-        <div className="col-ms-4">{this.showPhotos()}</div>
+      <div className="photo-list">
+        {this.showPhotos()}
       </div>
     );
   }

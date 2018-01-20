@@ -19,10 +19,8 @@ handleSubmit=(value)=>{
 };
 
     render(){
-            return <div>
-                <div className='container'> 
-                <div className='mt-4'>
-                <div className='text-center'>
+            return <div className='row justify-content-center'>
+                <div className='col-10 col-sm-6 col-md-4 mt-4'>
                 <h1>Photo Gallery</h1>
                 <form onSubmit={this.props.handleSubmit(this.handleSubmit)} className='mt-4'>
                     <Field name='searchBar'
@@ -33,9 +31,8 @@ handleSubmit=(value)=>{
                 </form>
                 </div>
                 </div>
-                </div>
             
-                </div>  
+                
                 
     }
 }

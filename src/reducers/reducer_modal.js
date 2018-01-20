@@ -5,7 +5,7 @@ const initialState={
     modalIsOpen: false,
 }
 export default function (state=initialState, action){
-    console.log ('reducer modal', action.payload)
+    
     switch(action.type){
         case OPEN_MODAL:
             return {

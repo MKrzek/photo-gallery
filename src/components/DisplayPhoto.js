@@ -4,14 +4,15 @@ export default class DisplayPhoto extends React.Component {
     const { farm, server, id, secret, title } = this.props.photo;
 
     return (
-      <div id="photo-list">
-        <div className="photo-item">
+      
+        <div className="photo-item text-center">
           <img
             src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
             alt={title}
+            className='photo'
             onClick={() => this.props.onPhotoSelect(this.props.photo)}
           />
-        </div>
+        
       </div>
     );
   }

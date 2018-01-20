@@ -4,7 +4,7 @@ import Modal from "react-modal";
 export default class PhotoModal extends React.Component {
   render() {
     if (!this.props.selectedPhoto) {
-      return <div />;
+      return <div></div>;
     } else {
       
       console.log('exif photo modal', this.props.exif);
@@ -41,13 +41,14 @@ export default class PhotoModal extends React.Component {
           style={customStyle}
         >
           <div className="photo-modal">
-            <div className="text-center">
+             <div>
               <img
                 src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
                 alt={title}
               />
-            </div>
-            <div>
+              </div>
+           
+            <div className='text-center mt-4'>
               <button
                 className="btn btn-primary mt-4"
                 onClick={() => this.props.onRequestClose()}>close</button>
