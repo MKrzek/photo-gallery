@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import DisplayExif from './DisplayExif.js';
 
 export default class PhotoModal extends React.Component {
   render() {
@@ -33,30 +34,23 @@ export default class PhotoModal extends React.Component {
           padding: "20px"
         }
       };
-      return (
-        <Modal
-          isOpen={this.props.modalIsOpen}
-          onRequestClose={() => this.props.onRequestClose()}
-          ariaHideApp={false}
-          style={customStyle}
-        >
+      return <Modal isOpen={this.props.modalIsOpen} onRequestClose={() => this.props.onRequestClose()} ariaHideApp={false} style={customStyle}>
           <div className="photo-modal">
-             <div>
-              <img
-                src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
-                alt={title}
-              />
-              </div>
-           
-            <div className='text-center mt-4'>
-              <button
-                className="btn btn-primary mt-4"
-                onClick={() => this.props.onRequestClose()}>close</button>
+            <div>
+              <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`} alt={title} className='modal-photo' />
             </div>
-            <p>{title}</p>
+
+            <div className="text-center mt-2">
+              <button className="btn btn-primary " onClick={() => this.props.onRequestClose()}>
+                close
+              </button>
+              <div>{title}</div>
+            </div>
+            <div>
+               <DisplayExif exif={this.props.exif} />
+            </div>
           </div>
-        </Modal>
-      );
+        </Modal>;
     }
   }
 }

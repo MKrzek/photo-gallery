@@ -11,7 +11,7 @@ onPhotoSelect = (photo) => {
    this.props.openModal(photo);
      
      this.props.getExifData(photo.id)
-     console.log('photo.id', photo.id)
+     
    };
 
   closePhoto = () => {
@@ -35,7 +35,7 @@ onPhotoSelect = (photo) => {
 };
 
 function mapStateToProps (state){
-  console.log ('exif', state.exif)
+  
   return {
     modalIsOpen: state.modal.modalIsOpen,
     selectedPhoto: state.modal.selectedPhoto,

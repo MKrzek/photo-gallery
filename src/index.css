@@ -6,6 +6,8 @@ body {
 
 .photo {
     width: 100%;
+    
+
 }
 
 .photo-item {
@@ -58,10 +60,13 @@ body {
     }
 }
 
-.photo-modal {
-    left: 50%;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
+ .photo-modal { 
+     
+     /* left: 50%; */
+     /* position: absolute;  */
+     text-align: center;
+     /* top: 50%; */
+     /* transform: translateX(-50%) translateY(-50%); */
+ } 
+
+
