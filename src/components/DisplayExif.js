@@ -12,7 +12,7 @@ export default class DisplayExif extends React.Component {
   };
   render() {
     return (
-      <div className="col col-md-8 mx-auto">
+      <div className="col col-md-8 mt-3 mx-auto">
         <table className="table-exif table table-bordered table-striped table-hover offset-md-2">
           <thead>
             <tr>

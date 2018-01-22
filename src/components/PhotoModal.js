@@ -38,7 +38,7 @@ export default class PhotoModal extends React.Component {
               <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`} alt={title} className=' col col-md-8'/>
             </div>
             <div className="text-center mt-2">
-              <button className="btn btn-primary " onClick={() => this.props.onRequestClose()}>
+              <button className="btn btn-primary mb-3" onClick={() => this.props.onRequestClose()}>
                 close
               </button>
               <div>{title}</div>
