@@ -6,9 +6,11 @@ export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
 export const EXIF_DATA='EXIF_DATA';
 
-export function fetchPhotos(value) {
-  const pageNum = 1;
+export function fetchPhotos(counter, value) {
+  const pageNum = counter;
   const searchKeyword = value.searchBar;
+  console.log ('pageNum', pageNum)
+  console.log('searchterm', searchKeyword)
   return dispatch => {
     axios.get(
         `https://api.flickr.com/services/rest/?api_key=${apiKey}&method=flickr.photos.search&format=json&nojsoncallback=1&&per_page=50&page=${pageNum}&text=${searchKeyword}`

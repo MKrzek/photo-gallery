@@ -15,7 +15,8 @@ renderSearchBar=(field)=>{
            </fieldset>
 };
 handleSubmit=(value)=>{
-    this.props.fetchPhotos(value)
+    let counter = 1
+    this.props.fetchPhotos(counter, value)
 };
 
     render(){
