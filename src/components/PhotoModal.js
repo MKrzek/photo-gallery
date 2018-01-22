@@ -7,8 +7,6 @@ export default class PhotoModal extends React.Component {
     if (!this.props.selectedPhoto) {
       return <div></div>;
     } else {
-      
-      console.log('exif photo modal', this.props.exif);
       const { farm, server, id, secret, title } = this.props.selectedPhoto;
       const customStyle = {
         overlay: {
@@ -37,9 +35,8 @@ export default class PhotoModal extends React.Component {
       return <Modal isOpen={this.props.modalIsOpen} onRequestClose={() => this.props.onRequestClose()} ariaHideApp={false} style={customStyle}>
           <div className="photo-modal">
             <div>
-              <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`} alt={title} className='modal-photo' />
+              <img src={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`} alt={title} className=' col col-md-8'/>
             </div>
-
             <div className="text-center mt-2">
               <button className="btn btn-primary " onClick={() => this.props.onRequestClose()}>
                 close

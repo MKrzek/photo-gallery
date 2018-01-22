@@ -9,7 +9,6 @@ class App extends Component {
 
 onPhotoSelect = (photo) => {
    this.props.openModal(photo);
-     
      this.props.getExifData(photo.id)
      
    };
@@ -35,7 +34,6 @@ onPhotoSelect = (photo) => {
 };
 
 function mapStateToProps (state){
-  
   return {
     modalIsOpen: state.modal.modalIsOpen,
     selectedPhoto: state.modal.selectedPhoto,
