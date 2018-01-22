@@ -26,7 +26,7 @@ class Photos extends React.Component {
     })
    let value = this.props.value;
     if ((window.innerHeight + window.scrollY)>=(document.body.offsetHeight - 500) && this.props.photos.length)
-    {this.props.fetchPhotos(this.state.counter, value);       
+    {this.props.scrollPhotos(this.state.counter, value);       
  }
 }
   
@@ -59,8 +59,6 @@ class Photos extends React.Component {
 
 
 function mapStateToProps(state){
-  
-  
     return {
         photos: state.fetch,
         value: state.form.searchBar.values

@@ -3,7 +3,6 @@ import{Field, reduxForm} from 'redux-form';
 import{connect} from 'react-redux';
 import * as Actions from '../actions/index.js';
 
-
 class SearchBar extends React.Component{
 
 renderSearchBar=(field)=>{
@@ -15,8 +14,12 @@ renderSearchBar=(field)=>{
            </fieldset>
 };
 handleSubmit=(value)=>{
-    let counter = 1
-    this.props.fetchPhotos(counter, value)
+    let counter = 1;
+       this.props.fetchPhotos(counter, value)
+   
+    
+    
+    
 };
 
     render(){
@@ -43,7 +46,8 @@ if (!value.searchBar){
     errors.searchBar='Please enter a search term'
 }
     return errors;
-}
+};
+
 
 export default connect(null, Actions) (reduxForm({
     form:'searchBar',
